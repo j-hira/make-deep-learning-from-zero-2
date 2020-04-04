@@ -1,0 +1,11 @@
+# docker-compose run -d anaconda
+version: "3"
+services:
+    anaconda:
+        image: continuumio/anaconda3:latest
+        tty: true
+        volumes:
+            - ./:/work:cached
+        working_dir: /work
+        environment:
+            - HOME=/work
