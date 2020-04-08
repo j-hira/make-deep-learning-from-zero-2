@@ -1,0 +1,10 @@
+.ipython
+.jupyter
+.local
+.npm
+*_history
+*.ipynb_checkpoints
+.config
+.cache
+*__pycache__
+*.pyc

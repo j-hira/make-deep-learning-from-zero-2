@@ -1,11 +1,14 @@
-# docker-compose run -d anaconda
 version: "3"
 services:
-    anaconda:
-        image: continuumio/anaconda3:latest
+    jupyterlab:
+        image: jun552313/jupyterlab
         tty: true
         volumes:
             - ./:/work:cached
+            - ~/template/jupyterlab/user-settings:/work/.jupyter/lab/user-settings:cached
+        ports:
+            - 8701:8888
         working_dir: /work
         environment:
             - HOME=/work
+        command: jupyter lab --no-browser --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
