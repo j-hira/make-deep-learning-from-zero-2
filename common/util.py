@@ -60,6 +60,7 @@ def most_similar(query, word_to_id, id_to_word, word_matrix, top=5):
         similarity[i] = cos_similarity(word_matrix[i], query_vec)
 
     count = 0
+    # argsort()ソートした配列のインデックスのnp.ndarrayを取得
     for i in (-1 * similarity).argsort():
         if id_to_word[i] == query:
             continue

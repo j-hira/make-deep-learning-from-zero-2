@@ -61,7 +61,7 @@ def load_vocab():
 
     words = open(file_path).read().replace('\n', '<eos>').strip().split()
 
-    for i, word in enumerate(words):
+    for _, word in enumerate(words):
         if word not in word_to_id:
             tmp_id = len(word_to_id)
             word_to_id[word] = tmp_id
