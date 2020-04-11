@@ -166,5 +166,6 @@ class Embedding:
         if GPU:
             np.scatter_add(dW, self.idx, dout)
         else:
+            # np.add.at(A, idx, B) は BをAに加算 その時のAの行をidxで指定
             np.add.at(dW, self.idx, dout)
         return None
